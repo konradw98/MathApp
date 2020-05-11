@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button button1;
     Button button2;
     Button button3;
+    Button button4;
+    Button button5;
     TextView sumTextView;
     TextView timerTextView;
     Button playAgainButton;
@@ -34,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         score=0;
         numberOfQuestions=0;
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestions));
-        timerTextView.setText("30s");
+        timerTextView.setText("15s");
         newQuestion();
         resultTextView.setText("");
         playAgainButton.setVisibility(View.INVISIBLE);
-        new CountDownTimer(5100,1000){
+        new CountDownTimer(15100,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    @SuppressLint("ResourceAsColor")
+
     public void chooseAnswer(View view){
       if( Integer.toString(locationOfCorrectAnswer).equals(view.getTag().toString())){
         resultTextView.setText("Correct!");
@@ -70,42 +72,96 @@ public class MainActivity extends AppCompatActivity {
       newQuestion();
     }
 
-    public void start(View view){
-        goButton.setVisibility(View.INVISIBLE);
 
-    }
 
     public void newQuestion(){
-
-
         Random rand= new Random();
-
-
-        int a= rand.nextInt(21);
-        int b= rand.nextInt(21);
-
-        sumTextView.setText(Integer.toString(a)+" + "+Integer.toString(b));
-
-
-        locationOfCorrectAnswer=rand.nextInt(4);
+        locationOfCorrectAnswer=rand.nextInt(6);
         answers.clear();
-        for(int i=0;i<4;i++){
-            if(i==locationOfCorrectAnswer){
-                answers.add(a+b);
-            } else {
-                int wrongAnswer=rand.nextInt(41);
-                while(wrongAnswer==a+b){
-                    wrongAnswer=rand.nextInt(41);
-                }
-                answers.add(wrongAnswer);
-            }
+
+
+        int operation=rand.nextInt(3);
+
+       if(operation==0){
+           int a= rand.nextInt(51);
+           int b= rand.nextInt(51);
+
+           sumTextView.setText(Integer.toString(a)+" + "+Integer.toString(b));
+
+
+
+           for(int i=0;i<6;i++){
+               if(i==locationOfCorrectAnswer){
+                   answers.add(a+b);
+               } else {
+                   int wrongAnswer=rand.nextInt(101);
+                   while(wrongAnswer==a+b){
+                       wrongAnswer=rand.nextInt(101);
+                   }
+                   answers.add(wrongAnswer);
+               } }
+       }
+
+        if(operation==1){
+            int a= rand.nextInt(11);
+            int b= rand.nextInt(11);
+
+            sumTextView.setText(Integer.toString(a)+" * "+Integer.toString(b));
+
+
+
+            for(int i=0;i<6;i++){
+                if(i==locationOfCorrectAnswer){
+                    answers.add(a*b);
+                } else {
+                    int wrongAnswer=rand.nextInt(101);
+                    while(wrongAnswer==a*b){
+                        wrongAnswer=rand.nextInt(101);
+                    }
+                    answers.add(wrongAnswer);
+                } }
 
         }
+
+
+
+
+
+        if(operation==2){
+            int a= 50+ rand.nextInt(51);
+            int b= rand.nextInt(51);
+
+            sumTextView.setText(Integer.toString(a)+" - "+Integer.toString(b));
+
+
+
+            for(int i=0;i<6;i++){
+                if(i==locationOfCorrectAnswer){
+                    answers.add(a-b);
+                } else {
+                    int wrongAnswer=rand.nextInt(101);
+                    while(wrongAnswer==a-b){
+                        wrongAnswer=rand.nextInt(101);
+                    }
+                    answers.add(wrongAnswer);
+                } }
+
+        }
+
+
+
+
+
+
+
+
 
         button0.setText(Integer.toString(answers.get(0)));
         button1.setText(Integer.toString(answers.get(1)));
         button2.setText(Integer.toString(answers.get(2)));
         button3.setText(Integer.toString(answers.get(3)));
+        button4.setText(Integer.toString(answers.get(4)));
+        button5.setText(Integer.toString(answers.get(5)));
 
     }
 
@@ -119,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
         button1=findViewById(R.id.button1);
         button2=findViewById(R.id.button2);
         button3=findViewById(R.id.button3);
+        button4=findViewById(R.id.button4);
+        button5=findViewById(R.id.button5);
         sumTextView= findViewById(R.id.sumTextView);
         resultTextView=findViewById(R.id.resultTextView);
         scoreTextView=findViewById(R.id.scoreTextView);

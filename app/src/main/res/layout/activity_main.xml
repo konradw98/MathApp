@@ -83,6 +83,26 @@
             android:tag="3"
             android:text="Button"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="chooseAnswer"
+            android:padding="15sp"
+            android:tag="4"
+            android:text="Button"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="chooseAnswer"
+            android:padding="15sp"
+            android:tag="5"
+            android:text="Button"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView
