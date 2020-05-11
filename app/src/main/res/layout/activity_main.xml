@@ -6,26 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/goButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#41BF8C"
-        android:onClick="start"
-        android:padding="20sp"
-        android:text="GO!"
-        android:textSize="40sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -70,7 +52,7 @@
             android:padding="15sp"
             android:tag="0"
             android:text="Button"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button1"
@@ -80,7 +62,7 @@
             android:padding="15sp"
             android:tag="1"
             android:text="Button"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button2"
@@ -90,7 +72,7 @@
             android:padding="15sp"
             android:tag="2"
             android:text="Button"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button3"
@@ -100,31 +82,47 @@
             android:padding="15sp"
             android:tag="3"
             android:text="Button"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/sumTextView"
         android:layout_width="136dp"
         android:layout_height="66dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:text="10+10"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goButton" />
+        app:layout_constraintTop_toBottomOf="@+id/playAgainButton" />
 
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="36dp"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/sumTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFEB3B"
+        android:onClick="playAgain"
+        android:text="play again!"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
