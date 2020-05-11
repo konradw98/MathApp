@@ -147,15 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 } }
 
         }
-
-
-
-
-
-
-
-
-
+        
         button0.setText(Integer.toString(answers.get(0)));
         button1.setText(Integer.toString(answers.get(1)));
         button2.setText(Integer.toString(answers.get(2)));
